@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Form validation</title>
+  </head>
+
+  <body class="container mt-5">
+    <section>
+      <h2 id="contact">Contact</h2>
+
+      <div class="form-container col-sm-10 col-md-6 col-lg-4 mt-5">
+        <form
+          name="contact"
+          action="https://httpbin.org/anything"
+          method="POST"
+          onsubmit="return validateForm()"
+          id="form"
+        >
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="text"
+              name="name"
+              id="name-id"
+              placeholder="Full name"
+            />
+            <p id="message-name" class="text-danger m-0 pl-1"></p>
+          </div>
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="text"
+              name="e-mail"
+              id="e-mail-id"
+              placeholder="E-mail adress"
+            />
+            <p id="message-email" class="text-danger m-0 pl-1"></p>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <label class="check-container">
+                <input type="radio" name="type" id="private" value="Private" />
+                Private
+              </label>
+            </div>
+
+            <div class="form-check">
+              <label class="check-container">
+                <input
+                  type="radio"
+                  name="type"
+                  id="professional"
+                  value="Professional"
+                />
+                Professional
+              </label>
+            </div>
+
+            <div class="form-check">
+              <label class="check-container">
+                <input
+                  type="radio"
+                  name="type"
+                  id="enterprise"
+                  value="Enterprise"
+                />
+                Enterprise
+              </label>
+              <p id="message-type" class="text-danger m-0"></p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <label class="check-container box">
+                <input
+                  type="checkbox"
+                  name="terms"
+                  id="terms"
+                  value="Terms accepted"
+                />
+                Accept terms
+                <p id="message-terms" class="text-danger m-0"></p>
+              </label>
+            </div>
+
+            <div class="form-check">
+              <label class="check-container box">
+                <input
+                  type="checkbox"
+                  name="newsletter"
+                  id="newsletter"
+                  value="Accepts Newsletter"
+                  checked="checked"
+                />
+                Newsletter
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="text">
+              <textarea
+                class="form-control"
+                name="message"
+                rows="5"
+                placeholder="Message"
+              ></textarea>
+            </div>
+          </div>
+
+          <p id="message" class="text-danger"></p>
+
+          <button class="btn btn-light" type="submit" value="Sign Up">
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
